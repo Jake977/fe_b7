@@ -1,0 +1,94 @@
+.price {
+  .price-content {
+    display: flex;
+    //margin: 20px;
+    //overflow-x: scroll;
+    //overflow-y: hidden;
+    //min-height: 200px;
+  }
+
+  .price-table {
+    display: flex;
+    flex-direction: column;
+    //flex-wrap: nowrap;
+    padding: 0;
+    list-style: none;
+    //margin:0 15px 20px 0;
+
+    &__row {
+      position: relative;
+      height: 160px;
+      max-width: 260px;
+      background-color: #ffffff;
+      border-radius: 6px;
+      font-size: 14px;
+      padding: 15px;
+      //margin: 5px 10px;
+      color: $text-gray;
+    }
+
+    &__cell:nth-child(2n) {
+      margin-bottom: 10px;
+      color: $text;
+    }
+
+    &__cell:last-child {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+    }
+  }
+
+  &__order {
+    background-color: $main-color;
+    width: 120px;
+    height: 32px;
+    border-radius: 16px;
+    border: none;
+    text-align: left;
+    padding-left: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #ffffff;
+
+    &:hover{
+      background-color: $main-color-hover;
+    }
+  }
+
+  &__order--icon-arrow {
+    background-image: url("../img/icon_white_arrow.svg");
+    background-position: 85% 50%;
+    background-repeat: no-repeat;
+  }
+
+  &__text {
+    margin: 30px;
+    max-width: 420px;
+  }
+
+  &__offer {
+    position: relative;
+  }
+
+  &__offer::after {
+    position: absolute;
+    content: url("../img/icon_red_arrow.svg");
+    padding: 4px 0 0 5px;
+  }
+
+  &__link {
+    font-family: $font-family;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    text-decoration: none;
+    color: $text;
+
+    &:hover{
+      color: $main-color;
+    }
+  }
+}

@@ -1,0 +1,118 @@
+.modal-phone {
+  position: absolute;
+  z-index: 15;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  transition: width, 0.25s ease;
+
+  &__container {
+    padding: 16px;
+  }
+
+  &__title {
+    position: relative;
+    margin: 30px 0;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 40px;
+    letter-spacing: -0.6px;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+
+  &__title:before {
+    position: absolute;
+    content:"";
+    top: 0;
+    left: -16px;
+    width: 4px;
+    height: 100%;
+    background-color: #41F6D7;
+  }
+
+  &__text-field {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #EAEAEA;
+    border-radius: 8px;
+    font-family: $font-family;
+    font-size: 16px;
+  }
+
+  &__text-field::placeholder {
+    color: #B5B6BC;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 16px;
+    min-width: 270px;
+  }
+
+  &__text--maincolor {
+    color: $main-color;
+  }
+
+  &__btn-container {
+    text-align: right;
+  }
+
+  &__send-button {
+    background-color: $main-color;
+    width: 120px;
+    height: 32px;
+    border-radius: 16px;
+    border: none;
+    text-align: left;
+    padding-left: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #ffffff;
+
+    &--icon-arrow {
+      background-image: url("../img/icon_white_arrow.svg");
+      background-position: 85% 50%;
+      background-repeat: no-repeat;
+    }
+
+    &:hover{
+      background-color: $main-color-hover;
+    }
+  }
+
+  &--show {
+    width: 320px;
+    box-shadow: -16px 0 10px -10px rgba(14, 24, 80, 0.2);
+    @include xs-screen{
+      width: 100%;
+    }
+  }
+}
+
+.modal-overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 11;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.overlay--show {
+  width: 100%;
+  opacity: 1;
+}

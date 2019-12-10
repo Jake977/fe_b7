@@ -1,0 +1,32 @@
+.menu {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 10px 14px;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+  overflow-x: auto;
+
+  &__item {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 0 10px -4px;
+  }
+
+  &__item--active {
+    border: 2px solid #B8FFEC;
+    border-radius: 6px;
+    background: #FFFFFF;
+    margin-left: 1px;
+  }
+
+  &__link {
+    display: block;
+    white-space: nowrap;
+    text-decoration: none;
+    line-height: 24px;
+    padding: 5px 20px;
+    color: #7E7E82;
+    background-color: transparent;
+  }
+}

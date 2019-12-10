@@ -1,0 +1,128 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 0;
+  min-width: 0;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: min-width, 0.2s;
+  font-size: 16px;
+  background-color: #ffffff;
+
+/// old styles start
+  &__container{
+    padding: 18px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__header .button-icon:first-child {
+    margin-right: 16px;
+  }
+
+  &__header .button-icon:last-child {
+    margin-left: auto;
+  }
+
+  &__menu {
+    list-style: none;
+    padding:0;
+    margin: 20px 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    padding: 8px 0;
+    color: #1B1C21;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &--active {
+      color: $text-gray;
+    }
+
+    &--active::before {
+      position: absolute;
+      content:"";
+      top: 0;
+      left: -18px;
+      width: 4px;
+      height: 100%;
+      background-color: $second-color;
+    }
+  }
+
+  &__icons {
+    margin-bottom: 20px;
+    white-space: nowrap;
+  }
+
+  &__icons > .button-icon {
+    margin-right: 16px;
+  }
+
+  &__lang {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  &__langlink {
+    display: block;
+    margin-right: 8px;
+    text-decoration: none;
+    color: $text;
+
+    &--active {
+      text-decoration: none;
+      color: $text-gray;
+    }
+  }
+
+  &__footer--rowspace{
+    margin-bottom: 20px;
+  }
+
+  &__mail-link:link,
+  &__mail-link:visited,
+  &__mail-link:hover,
+  &__mail-link:active {
+    color: $text;
+  }
+
+  &__phone-number {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+/// old styles end
+
+  &--show {
+    width: 320px;
+    box-shadow: 16px 0 10px -10px rgba(14, 24, 80, 0.2);
+  }
+
+  @include lg-screen {
+    min-width: 320px;
+  }
+
+  @include md-screen {
+    //position: absolute;
+  }
+}

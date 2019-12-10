@@ -1,0 +1,35 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 1px solid #D9FFF5;
+  color: $text-gray;
+  padding: 10px;
+
+  &__text {
+    text-align: center;
+    margin-bottom: 10px;
+    flex-grow: 1;
+
+    @media screen and (min-width: 768px){
+      text-align: left;
+      flex-basis: 33%;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $text-gray;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+
+  @media screen and (min-width: 768px){
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 35px 25px 25px;
+  }
+}
