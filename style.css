@@ -76,6 +76,8 @@ body {
     margin-right: 20px; }
   @media screen and (max-width: 576px) {
     .header__md-screen-icons {
+      display: none; }
+    .header__divider:first-child {
       display: none; } }
   @media screen and (min-width: 992px) {
     .header {
@@ -343,6 +345,13 @@ body {
 
 .brands__content {
   margin: 14px; }
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    .brands__content {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-content: flex-start;
+      flex-wrap: wrap; } }
 
 .brands__item {
   display: block;
