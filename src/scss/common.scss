@@ -53,6 +53,10 @@ body{
     &__md-screen-icons {
       display: none;
     }
+
+    &__divider:first-child {
+      display: none;
+    }
   }
 
   @include lg-screen{
