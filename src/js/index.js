@@ -1,83 +1,61 @@
 import '../scss/style.scss';
 import Swiper from 'swiper';
 
+const breakpoint = window.matchMedia('(min-width: 440px)');
 
-const breakpoint = window.matchMedia('(min-width: 768px)');
-let brandsSwiper;
+let brandsSwiper = undefined;
+let techSwiper = undefined;
+let priceSwiper = undefined;
 
-const breakpointChecker = function() {
-  if ( breakpoint.matches === true ) {
-    if ( brandsSwiper !== undefined ) brandsSwiper.destroy( true, true );
+
+const breakpointChecker1 = function() {
+  if (breakpoint.matches === true) {
+    if (brandsSwiper !== undefined) brandsSwiper.destroy(true, true);
+
     return;
-  } else if ( breakpoint.matches === false ) {
-    return enableSwiper();
+  } else if (breakpoint.matches === false) {
+    return enableSwiper(brandsSwiper, '.brands .swiper-container');
   }
 };
 
-const enableSwiper = function() {
-  brandsSwiper = new Swiper ('.brands .swiper-container', {
-    direction: 'horizontal',
-    loop: false,
-    spaceBetween: 20,
-    slidesPerView: 1,
-
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-  });
+const breakpointChecker2 = function() {
+  if (breakpoint.matches === true) {
+    if (techSwiper !== undefined) techSwiper.destroy(true, true);
+    return;
+  } else if (breakpoint.matches === false) {
+    return enableSwiper(techSwiper, '.tech .swiper-container');
+  }
 };
 
+const breakpointChecker3 = function() {
+  if (breakpoint.matches === true) {
+    if (priceSwiper !== undefined) priceSwiper.destroy(true, true);
+    return;
+  } else if (breakpoint.matches === false) {
+    return enableSwiper(priceSwiper, '.price .swiper-container');
+  }
+};
 
-breakpoint.addListener(breakpointChecker);
-breakpointChecker();
+const enableSwiper = function(swiperName, swiperClass) {
+  swiperName = new Swiper(swiperClass, {
+      direction: 'horizontal',
+      loop: false,
+      spaceBetween: 20,
+      slidesPerView: 'auto',
 
-/////////////////////////////////////
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+};
 
-// const brandsSwiper = new Swiper('.brands .swiper-container', {
-//   direction: 'horizontal',
-//   loop: false,
-//   spaceBetween: 20,
-//   slidesPerView: 'auto',
-//
-//   pagination: {
-//     el: '.swiper-pagination',
-//     clickable: true,
-//   },
-//   breakpoints: {
-//     520: {
-//       slidesPerView: 2,
-//       spaceBetween: 20,
-//     },
-//     768: {
-//       slidesPerView: 3,
-//       spaceBetween: 20,
-//     },
-//   }
-// });
-
-const techSwiper = new Swiper('.tech .swiper-container', {
-  direction: 'horizontal',
-  loop: false,
-  spaceBetween: 20,
-  slidesPerView: 'auto',
-
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-});
-
-const priceSwiper = new Swiper('.price .swiper-container', {
-  direction: 'horizontal',
-  loop: false,
-  spaceBetween: 20,
-
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-});
+breakpoint.addListener(breakpointChecker1);
+breakpoint.addListener(breakpointChecker2);
+breakpoint.addListener(breakpointChecker3);
+breakpointChecker1();
+breakpointChecker2();
+breakpointChecker3();
 
 const serviceReadmore = document.querySelector('.service__button');
 const serviceText = document.querySelector('.service__text2');
@@ -138,11 +116,34 @@ for(let i = 0; i < iconButtons.length; i++){
   });
 };
 
+const brandsCollection = document.querySelector('.brands__container');
+const brandsToggleButton = document.querySelector('.brands__button-show-hide');
+const brandsButtonTextShow = brandsToggleButton.querySelector('.button-show-hide__textShow');
+const brandsButtonTextHide = brandsToggleButton.querySelector('.button-show-hide__textHide');
+
+brandsToggleButton.addEventListener('click', function(){
+  brandsCollection.classList.toggle('brands__container--overflow');
+  brandsToggleButton.classList.toggle('button-show-hide--icon-arrowsup');
+  brandsToggleButton.classList.toggle('button-show-hide--icon-arrowsdown');
+  brandsButtonTextShow.classList.toggle('button-show-hide__textShow--visibility');
+  brandsButtonTextHide.classList.toggle('button-show-hide__textHide--visibility');
+});
+
+const techCollection = document.querySelector('.tech__container');
+const techToggleButton = document.querySelector('.tech__button-show-hide');
+const techButtonTextShow = techToggleButton.querySelector('.button-show-hide__textShow');
+const techButtonTextHide = techToggleButton.querySelector('.button-show-hide__textHide');
+
+techToggleButton.addEventListener('click', function(){
+  techCollection.classList.toggle('tech__container--overflow');
+  techToggleButton.classList.toggle('button-show-hide--icon-arrowsup');
+  techToggleButton.classList.toggle('button-show-hide--icon-arrowsdown');
+  techButtonTextShow.classList.toggle('button-show-hide__textShow--visibility');
+  techButtonTextHide.classList.toggle('button-show-hide__textHide--visibility');
+});
+
 modalOverlay.addEventListener('click', function() {
   modalPhone.classList.remove('modal-phone--show');
   modalChat.classList.remove('modal-chat--show');
   modalOverlay.classList.remove('overlay--show');
 });
-
-
-

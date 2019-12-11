@@ -14,7 +14,7 @@ body{
   display: flex;
   flex-direction: row;
   background-color: green;
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   position: relative;
 }
@@ -190,18 +190,65 @@ body{
   }
 }
 
+.button-show-hide {
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  height: 40px;
+  line-height: 40px;
+  background-color: transparent;
+  margin-top: 20px;
+
+  &--icon-arrowsdown {
+    background: url("../img/icon_arrows_down.svg") 5% 50% no-repeat;
+    transition: background-position, 0.3s ease;
+    padding: 0 32px;
+  }
+
+  &--icon-arrowsup {
+    background: url("../img/icon_arrows_up.svg") 5% 50% no-repeat;
+    transition: background-position, 0.3s ease;
+    padding: 0 32px;
+  }
+
+  &__textShow--visibility {
+    display: none;
+  }
+
+  &__textHide--visibility {
+    display: none;
+  }
+
+  @media screen and (max-width: 440px){
+    display: none;
+  }
+}
+
 .brands .swiper-container {
-  height: 125px;
+  @media screen and (max-width: 440px){
+    width: 280px;
+    height: 125px;
+  }
 }
 
 .tech .swiper-container {
-  width: 260px;
-  height: 210px;
+  @media screen and (max-width: 440px) {
+    width: 280px;
+    height: 210px;
+  }
 }
 
 .price .swiper-container {
-  width: 260px;
-  height: 235px;
+  @media screen and (max-width: 440px) {
+    width: 280px;
+    height: 235px;
+  }
+}
+
+.swiper-pagination {
+  @include swiper-breakpoint {
+    display: none;
+  }
 }
 
 .swiper-pagination-bullet {

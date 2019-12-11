@@ -22,6 +22,12 @@
   }
 } // 992px
 
+@mixin swiper-breakpoint(){
+  @media screen and (min-width: 440px){
+    @content;
+  }
+}
+
 @import "config";
 @import "swiper.min.css";
 @import "fonts";
