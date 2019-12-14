@@ -1,17 +1,17 @@
 import '../scss/style.scss';
 import Swiper from 'swiper';
 
-const breakpoint = window.matchMedia('(min-width: 440px)');
+const breakpoint = window.matchMedia('(min-width: 400px)');
+const pSwiperContainer = document.querySelector('.pswiper--container');
+const pSwiperWrapper = document.querySelector('.pswiper--wrapper');
 
-let brandsSwiper = undefined;
-let techSwiper = undefined;
-let priceSwiper = undefined;
-
+let brandsSwiper;
+let techSwiper;
+let priceSwiper;
 
 const breakpointChecker1 = function() {
   if (breakpoint.matches === true) {
     if (brandsSwiper !== undefined) brandsSwiper.destroy(true, true);
-
     return;
   } else if (breakpoint.matches === false) {
     return enableSwiper(brandsSwiper, '.brands .swiper-container');
@@ -29,25 +29,34 @@ const breakpointChecker2 = function() {
 
 const breakpointChecker3 = function() {
   if (breakpoint.matches === true) {
-    if (priceSwiper !== undefined) priceSwiper.destroy(true, true);
+    if (priceSwiper !== undefined) {
+      priceSwiper.destroy(true, true);
+      pSwiperContainer.classList.remove('swiper-container');
+      pSwiperWrapper.classList.remove('swiper-wrapper');
+      pSwiperWrapper.style.removeProperty('transform');
+    }
     return;
+
   } else if (breakpoint.matches === false) {
+    pSwiperContainer.classList.add('swiper-container');
+    pSwiperWrapper.classList.add('swiper-wrapper');
     return enableSwiper(priceSwiper, '.price .swiper-container');
   }
 };
 
 const enableSwiper = function(swiperName, swiperClass) {
   swiperName = new Swiper(swiperClass, {
-      direction: 'horizontal',
-      loop: false,
-      spaceBetween: 20,
-      slidesPerView: 'auto',
+    direction: 'horizontal',
+    loop: false,
+    spaceBetween: 20,
+    slidesPerView: 'auto',
 
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-    });
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+  console.log('111' + swiperName);
 };
 
 breakpoint.addListener(breakpointChecker1);
@@ -78,6 +87,8 @@ for(let i = 0; i < iconButtons.length; i++){
     switch (iconButtons[i].dataset.icon) {
       case "burger":
         sidebar.classList.toggle('sidebar--show');
+        modalOverlay.classList.add('overlay--show');
+        modalOverlay.style.zIndex = "9";
         break;
       case "repair":
         //console.log( 'repair' );
@@ -87,6 +98,8 @@ for(let i = 0; i < iconButtons.length; i++){
         break;
       case "sidebar-close":
         sidebar.classList.toggle('sidebar--show');
+        modalOverlay.classList.remove('overlay--show');
+        modalOverlay.style.zIndex = "11";
         break;
       case "search":
         console.log( 'search' );
@@ -94,18 +107,22 @@ for(let i = 0; i < iconButtons.length; i++){
       case "phone":
         modalPhone.classList.add('modal-phone--show');
         modalOverlay.classList.add('overlay--show');
+        modalPhone.style.overflow = "visible";
         break;
       case "phone-close":
         modalPhone.classList.remove('modal-phone--show');
         modalOverlay.classList.remove('overlay--show');
+        modalPhone.style.overflow = "hidden";
         break;
       case "chat":
         modalChat.classList.add('modal-chat--show');
         modalOverlay.classList.add('overlay--show');
+        modalChat.style.overflow = "visible";
         break;
       case "chat-close":
         modalChat.classList.remove('modal-chat--show');
         modalOverlay.classList.remove('overlay--show');
+        modalChat.style.overflow = "hidden";
         break;
       case "profile":
         console.log( 'profile' );
@@ -145,5 +162,8 @@ techToggleButton.addEventListener('click', function(){
 modalOverlay.addEventListener('click', function() {
   modalPhone.classList.remove('modal-phone--show');
   modalChat.classList.remove('modal-chat--show');
+  sidebar.classList.remove('sidebar--show');
   modalOverlay.classList.remove('overlay--show');
+  modalPhone.style.overflow = "hidden";
+  modalChat.style.overflow = "hidden";
 });

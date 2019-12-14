@@ -36,48 +36,8 @@ body{
   }
 }
 
-.header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #ffffff;
-  height: 85px;
-
-  &__divider {
-    height: 32px;
-    width: 2px;
-    background-color: #EAEAEA;
-    margin-right: 20px;
-  }
-  @media screen and (max-width: 576px){
-    &__md-screen-icons {
-      display: none;
-    }
-
-    &__divider:first-child {
-      display: none;
-    }
-  }
-
-  @include lg-screen{
-    display: none;
-  }
-}
-
-.header .logo{
-  flex-grow: 1;
-}
-
-.header .button-icon {
-  margin-right: 20px;
-}
-
-.header > .button-icon:first-child {
-  margin-left: 20px;
-}
-
 .title-section {
-  border-top: 1px solid #D9FFF5;
+  border-top: 1px solid $second-color-light;
   background: linear-gradient(90deg, #F8F8F8 0%, #FFFFFF 100%);
   text-transform: uppercase;
   padding: 20px 0 20px 32px;
@@ -104,12 +64,13 @@ body{
 
 .icon--repair {
   background-image: url("../img/icon_repair.svg");
+  margin-left: 8px;
 }
 
 .icon--checkstatus {
   background-image: url("../img/icon_checkstatus.svg");
+  margin-left: 8px;
 }
-
 
 .button-icon {
   display: inline-block;
@@ -161,12 +122,33 @@ body{
   }
 
   &[data-icon="sidebar-close"]{
-    @include lg-screen{
-      display: none;
+     @include lg-screen{
+       display: none;
+     }
+   }
+
+  &[data-icon="chat-close"]{
+    position: absolute;
+    top: 48px;
+    left: -60px;
+    @media screen and (max-width: 440px){
+      position: relative;
+      top:0;
+      left:0;
+    }
+  }
+
+  &[data-icon="phone-close"]{
+    position: absolute;
+    top: 48px;
+    left: -60px;
+    @media screen and (max-width: 440px){
+      position: relative;
+      top:0;
+      left:0;
     }
   }
 }
-
 
 .button {
   font-family: $font-family;
@@ -219,27 +201,29 @@ body{
     display: none;
   }
 
-  @media screen and (max-width: 440px){
+  @include swiper-brpoint(){
     display: none;
   }
 }
 
 .brands .swiper-container {
-  @media screen and (max-width: 440px){
+  @include swiper-brpoint(){
+    margin: 0 auto;
     width: 280px;
     height: 125px;
   }
 }
 
 .tech .swiper-container {
-  @media screen and (max-width: 440px) {
+  @include swiper-brpoint(){
+    margin: 0 auto;
     width: 280px;
     height: 210px;
   }
 }
 
 .price .swiper-container {
-  @media screen and (max-width: 440px) {
+  @include swiper-brpoint(){
     width: 280px;
     height: 235px;
   }

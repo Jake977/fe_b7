@@ -1,84 +1,104 @@
 .price {
-  .price-content {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 14px;
-    //margin: 20px;
-    //overflow-x: scroll;
-    //overflow-y: hidden;
-    //min-height: 200px;
-  }
   .price-table {
+    list-style: none;
+    padding: 10px 20px;
+
+    &__header {
     display: flex;
     flex-direction: row;
-    padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 10px 24px;
+    color: $text-gray;
+    background-color: $bg-color;
 
-    @media screen and (min-width: 440px) {
-      display: table;
-      box-sizing: border-box;
-      width: 100%;
-      background-color: #ffffff;
-      border-radius: 10px;
-      border-spacing: 0 20px;
-      padding-left: 30px;
-      margin-left: auto;
-      margin-right: auto;
+      @include swiper-brpoint {
+        display: none;
+      }
     }
 
     &__row {
-      position: relative;
-      height: 160px;
-      max-width: 260px;
-      background-color: #FFFFFF;
-      font-size: 14px;
-      padding: 15px;
-      color: $text-gray;
-
-      @media screen and (min-width: 440px) {
-        display: table-row;
-        max-width: unset;
-        height: 30px;
-        line-height: 30px;
-        padding: 0 15px;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+      @include swiper-brpoint {
+        flex-direction: column;
       }
     }
 
-    &__cell{
-      @media screen and (min-width: 440px) {
-        display: table-cell;
-        line-height: 30px;
-        max-width: unset;
-        vertical-align: middle;
-        border-bottom: 1px solid #ccc;
-        padding: 0 15px 12px;
+    &__cell {
+      width: 15%;
+      min-width: 90px;
+
+      @include swiper-brpoint {
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        &:before {
+          content: attr(data-title);
+          display: block;
+          color: $text-gray;
+        }
       }
     }
 
-    &__cell:nth-child(2n) {
-      margin-bottom: 10px;
-      color: $text;
+    &__cell:first-child {
+      width: 55%;
+      @include swiper-brpoint {
+        width: 190px;
+      }
     }
 
     &__cell:last-child {
-      position: absolute;
-      bottom: 15px;
-      right: 15px;
+      text-align: right;
+      min-width: 120px;
+
+      @include swiper-brpoint {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+      }
+    }
+  }
+
+  .table-body {
+    list-style: none;
+    margin: 0;
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 10px 24px;
+
+    @include swiper-brpoint {
+      display: flex;
+      flex-direction: row;
+      padding: 0;
+      background-color: transparent;
     }
 
-    @media screen and (min-width: 440px) {
-      &__cell:nth-child(odd) {
-        display: none;
-      }
-
-      &__cell:last-child {
+    &__item {
+      border-bottom: 1px solid #eaeaea;
+      @include swiper-brpoint {
+        display: flex;
+        box-sizing: border-box;
+        flex-direction: column;
         position: relative;
-        display: inline-block;
-        bottom: 0;
-        right: 0;
+        height: 200px;
+        max-width: 260px;
+        padding-left: 10px;
+        border: none;
+        color: $text;
+        font-size: 14px;
+        background-color: #FFFFFF;
+        border-radius: 6px;
+        //margin-right: 16px;
       }
     }
 
-
+    &__item:last-child {
+      border-bottom: none;
+    }
   }
 
   &__order {

@@ -1,11 +1,5 @@
-@mixin xs-screen(){
-  @media screen and (max-width: 320px){
-    @content;
-  }
-}
-
 @mixin sm-screen(){
-  @media screen and (min-width: 321px) and (max-width: 767px){
+  @media screen and (min-width: 0) and (max-width: 767px){
     @content;
   }
 }
@@ -23,7 +17,13 @@
 } // 992px
 
 @mixin swiper-breakpoint(){
-  @media screen and (min-width: 440px){
+  @media screen and (min-width: 400px){
+    @content;
+  }
+}
+
+@mixin swiper-brpoint(){
+  @media screen and (max-width: 400px){
     @content;
   }
 }
@@ -32,6 +32,7 @@
 @import "swiper.min.css";
 @import "fonts";
 @import "common";
+@import "header";
 @import "sidebar";
 @import "service";
 @import "menu";

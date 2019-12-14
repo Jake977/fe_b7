@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffffff;
+  height: 85px;
+
+  &__divider {
+    height: 32px;
+    width: 2px;
+    background-color: #EAEAEA;
+    margin-right: 16px;
+  }
+
+  @media screen and (max-width: 580px){
+    &__md-screen-icons {
+      display: none;
+    }
+
+    &__divider:nth-of-type(1) {
+      display: none;
+    }
+  }
+
+  @include lg-screen{
+    display: none;
+  }
+
+  .logo {
+    flex-grow: 1;
+  }
+
+  .button-icon {
+    margin-right: 16px;
+  }
+
+  & > .button-icon:first-child {
+    margin-left: 16px;
+  }
+}
+

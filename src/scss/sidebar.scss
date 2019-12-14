@@ -13,9 +13,8 @@
   font-size: 16px;
   background-color: #ffffff;
 
-/// old styles start
   &__container{
-    padding: 18px;
+    padding: 16px;
   }
 
   &__header {
@@ -111,18 +110,13 @@
     white-space: nowrap;
   }
 
-/// old styles end
-
   &--show {
     width: 320px;
     box-shadow: 16px 0 10px -10px rgba(14, 24, 80, 0.2);
+    border-right: 1px solid $second-color-light;
   }
 
   @include lg-screen {
     min-width: 320px;
-  }
-
-  @include md-screen {
-    //position: absolute;
   }
 }

@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="780b4cb4-179a-4fd7-986d-62cff4cf31a2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/scss/header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/_config.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/_config.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/brands.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/brands.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/common.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/modal-chat.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modal-chat.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/modal-phone.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modal-phone.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/price.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/price.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/service.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/service.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sidebar.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/tech.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/tech.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -31,6 +36,7 @@
   <component name="ProjectId" id="1UlqhXJMRSFqnMxwFQsduI1uiTI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
@@ -87,7 +93,8 @@
       <option name="presentableId" value="Default" />
       <updated>1575941648220</updated>
       <workItem from="1575941649290" duration="33759000" />
-      <workItem from="1576018674191" duration="43203000" />
+      <workItem from="1576018674191" duration="43633000" />
+      <workItem from="1576266330613" duration="56075000" />
     </task>
     <servers />
   </component>
