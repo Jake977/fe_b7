@@ -46,6 +46,7 @@ body {
   display: flex;
   flex-direction: row;
   max-width: 1440px;
+  overflow: hidden;
   margin: 0 auto;
   position: relative; }
 
@@ -264,16 +265,20 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 0;
+  width: 320px;
   min-width: 0;
-  position: absolute;
+  position: fixed;
   z-index: 10;
   top: 0;
-  left: 0;
+  left: -320px;
   overflow-x: hidden;
   transition: min-width, 0.2s;
   font-size: 16px;
   background-color: #ffffff; }
+  @media screen and (min-width: 992px) {
+    .sidebar {
+      position: absolute;
+      left: 0; } }
   .sidebar__container {
     padding: 16px; }
   .sidebar__header {
@@ -340,9 +345,12 @@ body {
     color: #1B1C21;
     text-decoration: none; }
   .sidebar--show {
-    width: 320px;
+    transform: translateX(320px);
     box-shadow: 16px 0 10px -10px rgba(14, 24, 80, 0.2);
     border-right: 1px solid #D9FFF5; }
+    @media screen and (min-width: 992px) {
+      .sidebar--show {
+        transform: translateX(0px); } }
   @media screen and (min-width: 992px) {
     .sidebar {
       min-width: 320px; } }
@@ -648,12 +656,12 @@ body {
     color: #FF3E79; }
 
 .modal-phone {
-  position: absolute;
+  position: fixed;
   z-index: 15;
   top: 0;
-  right: 0;
+  right: -400px;
   overflow: hidden;
-  width: 0;
+  width: 400px;
   height: 100%;
   box-sizing: border-box;
   background-color: #ffffff;
@@ -703,32 +711,15 @@ body {
     color: #FF3E79; }
   .modal-phone__btn-container {
     text-align: right; }
-  .modal-phone__send-button {
-    background-color: #FF3E79;
-    width: 120px;
-    height: 32px;
-    border-radius: 16px;
-    border: none;
-    text-align: left;
-    padding-left: 20px;
-    cursor: pointer;
-    font-size: 12px;
-    line-height: 24px;
-    text-transform: uppercase;
-    color: #ffffff; }
-    .modal-phone__send-button--icon-arrow {
-      background-image: url(./static/icon_white_arrow.svg);
-      background-position: 85% 50%;
-      background-repeat: no-repeat; }
-    .modal-phone__send-button:hover {
-      background-color: #FF004E; }
   .modal-phone--show {
     box-shadow: -16px 0 10px -10px rgba(14, 24, 80, 0.2);
     border-left: 1px solid #D9FFF5;
-    width: 320px; }
+    width: 320px;
+    transform: translateX(-400px); }
     @media screen and (min-width: 768px) {
       .modal-phone--show {
-        width: 400px; } }
+        width: 400px;
+        transform: translateX(-400px); } }
 
 .modal-overlay {
   height: 100%;
@@ -748,12 +739,12 @@ body {
   opacity: 1; }
 
 .modal-chat {
-  position: absolute;
+  position: fixed;
   z-index: 15;
   top: 0;
-  right: 0;
+  right: -400px;
   overflow: hidden;
-  width: 0;
+  width: 400px;
   height: 100%;
   box-sizing: border-box;
   background-color: #ffffff;
@@ -808,10 +799,12 @@ body {
   .modal-chat--show {
     box-shadow: -16px 0 10px -10px rgba(14, 24, 80, 0.2);
     border-left: 1px solid #D9FFF5;
-    width: 320px; }
+    width: 320px;
+    transform: translateX(-400px); }
     @media screen and (min-width: 768px) {
       .modal-chat--show {
-        width: 400px; } }
+        width: 400px;
+        transform: translateX(-400px); } }
 
 .footer {
   display: flex;
