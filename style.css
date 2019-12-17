@@ -92,6 +92,26 @@ body {
   background-image: url(./static/icon_checkstatus.svg);
   margin-left: 8px; }
 
+.long-button {
+  background-color: #FF3E79;
+  width: 120px;
+  height: 32px;
+  border-radius: 16px;
+  border: none;
+  text-align: left;
+  padding-left: 20px;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #ffffff; }
+  .long-button:hover {
+    background-color: #FF004E; }
+  .long-button--icon-arrow {
+    background-image: url(./static/icon_white_arrow.svg);
+    background-position: 85% 50%;
+    background-repeat: no-repeat; }
+
 .button-icon {
   display: inline-block;
   vertical-align: middle;
@@ -316,6 +336,9 @@ body {
     line-height: 32px;
     font-weight: bold;
     white-space: nowrap; }
+  .sidebar__phone-link:link, .sidebar__phone-link:visited, .sidebar__phone-link:hover, .sidebar__phone-link:active {
+    color: #1B1C21;
+    text-decoration: none; }
   .sidebar--show {
     width: 320px;
     box-shadow: 16px 0 10px -10px rgba(14, 24, 80, 0.2);
@@ -380,6 +403,10 @@ body {
   list-style: none;
   font-size: 16px;
   overflow-x: auto; }
+  @media screen and (min-width: 1400px) {
+    .menu {
+      overflow: unset;
+      flex-wrap: wrap; } }
   .menu__item {
     display: flex;
     justify-content: flex-start;
@@ -598,27 +625,6 @@ body {
   .price .table-body__item:last-child {
     border-bottom: none; }
 
-.price__order {
-  background-color: #FF3E79;
-  width: 120px;
-  height: 32px;
-  border-radius: 16px;
-  border: none;
-  text-align: left;
-  padding-left: 20px;
-  cursor: pointer;
-  font-size: 12px;
-  line-height: 24px;
-  text-transform: uppercase;
-  color: #ffffff; }
-  .price__order:hover {
-    background-color: #FF004E; }
-
-.price__order--icon-arrow {
-  background-image: url(./static/icon_white_arrow.svg);
-  background-position: 85% 50%;
-  background-repeat: no-repeat; }
-
 .price__text {
   margin: 30px;
   max-width: 420px; }
@@ -799,25 +805,6 @@ body {
     color: #FF3E79; }
   .modal-chat__btn-container {
     text-align: right; }
-  .modal-chat__send-button {
-    background-color: #FF3E79;
-    width: 120px;
-    height: 32px;
-    border-radius: 16px;
-    border: none;
-    text-align: left;
-    padding-left: 20px;
-    cursor: pointer;
-    font-size: 12px;
-    line-height: 24px;
-    text-transform: uppercase;
-    color: #ffffff; }
-    .modal-chat__send-button--icon-arrow {
-      background-image: url(./static/icon_white_arrow.svg);
-      background-position: 85% 50%;
-      background-repeat: no-repeat; }
-    .modal-chat__send-button:hover {
-      background-color: #FF004E; }
   .modal-chat--show {
     box-shadow: -16px 0 10px -10px rgba(14, 24, 80, 0.2);
     border-left: 1px solid #D9FFF5;
