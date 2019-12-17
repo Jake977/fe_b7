@@ -31,9 +31,9 @@ const breakpointChecker3 = function() {
   if (breakpoint.matches === true) {
     if (priceSwiper !== undefined) {
       priceSwiper.destroy(true, true);
+      pSwiperWrapper.removeAttribute("style");
       pSwiperContainer.classList.remove('swiper-container');
       pSwiperWrapper.classList.remove('swiper-wrapper');
-      pSwiperWrapper.style.removeProperty('transform');
     }
     return;
 

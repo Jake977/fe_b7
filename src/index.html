@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
@@ -62,10 +62,8 @@
       <div class="service__header">
         <h1 class="service__title">Услуги и сервисы</h1>
         <div class="service__buttons service__buttons--visibility">
-          <button type="button" class="button">Оставить заявку
-            <div class="icon icon--repair"></div></button>
-          <button type="button" class="button">Статус ремонта
-            <div class="icon icon--checkstatus"></div></button>
+          <button type="button" class="button">Оставить заявку<i class="icon icon--repair"></i></button>
+          <button type="button" class="button">Статус ремонта<i class="icon icon--checkstatus"></i></button>
         </div>
       </div>
       <nav>
@@ -162,7 +160,6 @@
         </button>
       </div>
     </section>
-
     <section class="price">
       <h2 class="price__title title-section">Цены на услуги</h2>
       <ul class="price-table">
@@ -238,9 +235,9 @@
   <section class="modal-phone">
     <div class="modal-phone__container">
       <button class="button-icon button-icon--cross" type="button" data-icon="phone-close"></button>
-      <div class="modal-phone__title">Заказать звонок</div>
-      <form class="modal-phone__form" action="" method="post">
-        <input class="modal-phone__text-field" type="tel" placeholder="Телефон" required>
+      <h2 class="modal-phone__title">Заказать звонок</h2>
+      <form class="modal-phone__form" action="#" method="post">
+        <input class="modal-phone__text-field" type="tel" name="tel" placeholder="Телефон" required>
         <div class="modal-phone__text">
           <p>Нажимая "отправить", вы даёте согласие на <span class="modal-phone__text--maincolor">обработку персональных
             данных</span> и&nbsp;соглашаетесь с нашей <span class="modal-phone__text--maincolor">политикой
@@ -255,12 +252,12 @@
   <section class="modal-chat">
     <div class="modal-chat__container">
       <button class="button-icon button-icon--cross" type="button" data-icon="chat-close"></button>
-      <div class="modal-chat__title">Обратная связь</div>
-      <form class="modal-chat__form" action="" method="post">
-        <input class="modal-chat__text-field" type="name" placeholder="Имя">
-        <input class="modal-chat__text-field" type="tel" placeholder="Телефон" required>
-        <input class="modal-chat__text-field" type="email" placeholder="Электронная почта" required>
-        <textarea class="modal-chat__textarea" rows="4" placeholder="Сообщение"></textarea>
+      <h2 class="modal-chat__title">Обратная связь</h2>
+      <form class="modal-chat__form" action="#" method="post">
+        <input class="modal-chat__text-field" type="text" name="name" placeholder="Имя">
+        <input class="modal-chat__text-field" type="tel" name="tel" placeholder="Телефон" required>
+        <input class="modal-chat__text-field" type="email" name="email" placeholder="Электронная почта" required>
+        <textarea class="modal-chat__textarea" rows="4" name="message" placeholder="Сообщение"></textarea>
         <div class="modal-chat__text">
           <p>Нажимая "отправить", вы даёте согласие на <span class="modal-chat__text--maincolor">обработку персональных
             данных</span> и&nbsp;соглашаетесь с нашей <span class="modal-chat__text--maincolor">политикой

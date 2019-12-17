@@ -1,11 +1,11 @@
 .modal-chat {
   position: absolute;
-  z-index: 14;
+  z-index: 15;
   top: 0;
   right: 0;
+  overflow: hidden;
   width: 0;
   height: 100%;
-  overflow: hidden;
   box-sizing: border-box;
   background-color: #ffffff;
   transition: width, 0.25s ease;
@@ -16,17 +16,13 @@
 
   &__title {
     position: relative;
-    margin: 32px 0;
+    margin: 30px 0;
     font-size: 24px;
     font-weight: bold;
     line-height: 40px;
     letter-spacing: -0.6px;
     white-space: nowrap;
     vertical-align: middle;
-
-    @media screen and (min-width: 400px){
-      margin: 32px 0;
-    }
   }
 
   &__title:before {
@@ -37,6 +33,10 @@
     width: 4px;
     height: 100%;
     background-color: $second-color;
+  }
+
+  &__text-field{
+    margin-bottom: 14px;
   }
 
   &__text-field,
@@ -53,10 +53,6 @@
   &__text-field::placeholder,
   &__textarea::placeholder {
     color: #B5B6BC;
-  }
-
-  &__text-field{
-    margin-bottom: 14px;
   }
 
   &__text {
@@ -107,4 +103,3 @@
     }
   }
 }
-
