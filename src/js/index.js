@@ -74,11 +74,11 @@ serviceReadmore.addEventListener('click', function(){
 });
 
 const sidebar = document.querySelector('.sidebar');
-const content = document.querySelector('.content');
 const iconButtons = document.querySelectorAll('.button-icon');
 const modalPhone = document.querySelector('.modal-phone');
 const modalChat = document.querySelector('.modal-chat');
 const modalOverlay = document.querySelector('.modal-overlay');
+let isSidebarOpened = false;
 
 for(let i = 0; i < iconButtons.length; i++){
   iconButtons[i].addEventListener("click", function() {
@@ -89,6 +89,7 @@ for(let i = 0; i < iconButtons.length; i++){
         sidebar.classList.toggle('sidebar--show');
         modalOverlay.classList.add('overlay--show');
         modalOverlay.style.zIndex = "9";
+        isSidebarOpened = true;
         break;
       case "repair":
         //console.log( 'repair' );
@@ -100,6 +101,7 @@ for(let i = 0; i < iconButtons.length; i++){
         sidebar.classList.toggle('sidebar--show');
         modalOverlay.classList.remove('overlay--show');
         modalOverlay.style.zIndex = "11";
+        isSidebarOpened = false;
         break;
       case "search":
         console.log( 'search' );
@@ -108,21 +110,31 @@ for(let i = 0; i < iconButtons.length; i++){
         modalPhone.classList.add('modal-phone--show');
         modalOverlay.classList.add('overlay--show');
         modalPhone.style.overflow = "visible";
+        modalOverlay.style.zIndex = "11";
         break;
       case "phone-close":
         modalPhone.classList.remove('modal-phone--show');
-        modalOverlay.classList.remove('overlay--show');
         modalPhone.style.overflow = "hidden";
+        if (isSidebarOpened){
+          modalOverlay.style.zIndex = "9";
+        } else {
+          modalOverlay.classList.remove('overlay--show');
+        }
         break;
       case "chat":
         modalChat.classList.add('modal-chat--show');
         modalOverlay.classList.add('overlay--show');
         modalChat.style.overflow = "visible";
+        modalOverlay.style.zIndex = "11";
         break;
       case "chat-close":
         modalChat.classList.remove('modal-chat--show');
-        modalOverlay.classList.remove('overlay--show');
         modalChat.style.overflow = "hidden";
+        if (isSidebarOpened){
+          modalOverlay.style.zIndex = "9";
+        } else {
+          modalOverlay.classList.remove('overlay--show');
+        }
         break;
       case "profile":
         console.log( 'profile' );

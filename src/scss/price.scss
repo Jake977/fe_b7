@@ -101,31 +101,6 @@
     }
   }
 
-  &__order {
-    background-color: $main-color;
-    width: 120px;
-    height: 32px;
-    border-radius: 16px;
-    border: none;
-    text-align: left;
-    padding-left: 20px;
-    cursor: pointer;
-    font-size: 12px;
-    line-height: 24px;
-    text-transform: uppercase;
-    color: #ffffff;
-
-    &:hover{
-      background-color: $main-color-hover;
-    }
-  }
-
-  &__order--icon-arrow {
-    background-image: url("../img/icon_white_arrow.svg");
-    background-position: 85% 50%;
-    background-repeat: no-repeat;
-  }
-
   &__text {
     margin: 30px;
     max-width: 420px;

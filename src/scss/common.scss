@@ -14,6 +14,7 @@ body{
   display: flex;
   flex-direction: row;
   max-width: 1440px;
+  overflow: hidden;
   margin: 0 auto;
   position: relative;
 }
@@ -69,6 +70,31 @@ body{
 .icon--checkstatus {
   background-image: url("../img/icon_checkstatus.svg");
   margin-left: 8px;
+}
+
+.long-button {
+    background-color: $main-color;
+    width: 120px;
+    height: 32px;
+    border-radius: 16px;
+    border: none;
+    text-align: left;
+    padding-left: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #ffffff;
+
+    &:hover {
+      background-color: $main-color-hover;
+    }
+
+  &--icon-arrow {
+    background-image: url("../img/icon_white_arrow.svg");
+    background-position: 85% 50%;
+    background-repeat: no-repeat;
+  }
 }
 
 .button-icon {

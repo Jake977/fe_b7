@@ -1,10 +1,10 @@
 .modal-chat {
-  position: absolute;
+  position: fixed;
   z-index: 15;
   top: 0;
-  right: 0;
+  right: -400px;
   overflow: hidden;
-  width: 0;
+  width: 400px;
   height: 100%;
   box-sizing: border-box;
   background-color: #ffffff;
@@ -69,37 +69,14 @@
     text-align: right;
   }
 
-  &__send-button {
-    background-color: $main-color;
-    width: 120px;
-    height: 32px;
-    border-radius: 16px;
-    border: none;
-    text-align: left;
-    padding-left: 20px;
-    cursor: pointer;
-    font-size: 12px;
-    line-height: 24px;
-    text-transform: uppercase;
-    color: #ffffff;
-
-    &--icon-arrow {
-      background-image: url("../img/icon_white_arrow.svg");
-      background-position: 85% 50%;
-      background-repeat: no-repeat;
-    }
-
-    &:hover{
-      background-color: $main-color-hover;
-    }
-  }
-
   &--show {
     box-shadow: -16px 0 10px -10px rgba(14, 24, 80, 0.2);
     border-left: 1px solid $second-color-light;
     width: 320px;
+    transform: translateX(-400px);
     @media screen and (min-width: 768px){
       width: 400px;
+      transform: translateX(-400px);
     }
   }
 }

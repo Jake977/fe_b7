@@ -6,7 +6,11 @@
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/common.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/menu.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/modal-chat.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modal-chat.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/modal-phone.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/modal-phone.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/price.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/price.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sidebar.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +92,7 @@
       <workItem from="1576018674191" duration="43633000" />
       <workItem from="1576266330613" duration="57419000" />
       <workItem from="1576483788686" duration="2241000" />
-      <workItem from="1576555144450" duration="6625000" />
+      <workItem from="1576555144450" duration="16863000" />
     </task>
     <servers />
   </component>
