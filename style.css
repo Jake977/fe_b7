@@ -45,7 +45,6 @@ body {
 .main {
   display: flex;
   flex-direction: row;
-  background-color: green;
   max-width: 1440px;
   margin: 0 auto;
   position: relative; }
@@ -86,8 +85,11 @@ body {
     background-color: #FF004E; }
 
 .icon--repair {
+  background-position: 50px 80px;
+  background-repeat: no-repeat;
   background-image: url(./static/icon_repair.svg);
-  margin-left: 8px; }
+  margin-left: 8px;
+  padding-right: 40px; }
 
 .icon--checkstatus {
   background-image: url(./static/icon_checkstatus.svg);
