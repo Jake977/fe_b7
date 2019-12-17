@@ -744,12 +744,12 @@ body {
 
 .modal-chat {
   position: absolute;
-  z-index: 14;
+  z-index: 15;
   top: 0;
   right: 0;
+  overflow: hidden;
   width: 0;
   height: 100%;
-  overflow: hidden;
   box-sizing: border-box;
   background-color: #ffffff;
   transition: width, 0.25s ease; }
@@ -757,16 +757,13 @@ body {
     padding: 16px; }
   .modal-chat__title {
     position: relative;
-    margin: 32px 0;
+    margin: 30px 0;
     font-size: 24px;
     font-weight: bold;
     line-height: 40px;
     letter-spacing: -0.6px;
     white-space: nowrap;
     vertical-align: middle; }
-    @media screen and (min-width: 400px) {
-      .modal-chat__title {
-        margin: 32px 0; } }
   .modal-chat__title:before {
     position: absolute;
     content: "";
@@ -775,6 +772,8 @@ body {
     width: 4px;
     height: 100%;
     background-color: #41F6D7; }
+  .modal-chat__text-field {
+    margin-bottom: 14px; }
   .modal-chat__text-field, .modal-chat__textarea {
     box-sizing: border-box;
     width: 100%;
@@ -793,8 +792,6 @@ body {
     color: #B5B6BC; }
   .modal-chat__text-field::placeholder, .modal-chat__textarea::placeholder {
     color: #B5B6BC; }
-  .modal-chat__text-field {
-    margin-bottom: 14px; }
   .modal-chat__text {
     font-size: 14px;
     line-height: 16px;
